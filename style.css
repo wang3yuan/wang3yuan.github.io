@@ -1357,6 +1357,13 @@ html[data-theme="dark"] .course-category-header {
   line-height: 1.45;
 }
 
+.course-note {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding-left: 6px;
+}
+
 .courses-list {
   list-style: none;
   display: flex;
