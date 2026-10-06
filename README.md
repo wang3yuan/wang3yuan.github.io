@@ -1,92 +1,80 @@
 # 王三源 副教授 (Dr. San-Yuan Wang) 個人學術官方網站
 
-> 臺北醫學大學 跨領域學院 / 藥學院  
-> 專為 **GitHub Pages** 打造之零依賴、純靜態（Vanilla HTML5 + CSS3 + JavaScript）學術個人網頁。
+[![Website](https://img.shields.io/badge/Website-wang3yuan.github.io-0f3b68?style=flat-square&logo=googlechrome&logoColor=white)](https://wang3yuan.github.io/)
+[![Google Scholar](https://img.shields.io/badge/Google%20Scholar-Citations%201500%2B-4285F4?style=flat-square&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=di44kwgAAAAJ&hl=en)
+[![ORCID](https://img.shields.io/badge/ORCID-0000--0002--8804--2226-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0000-0002-8804-2226)
+[![TMU Hub](https://img.shields.io/badge/TMU%20Pure-Faculty%20Profile-1a5695?style=flat-square)](https://hub.tmu.edu.tw/zh/persons/san-yuan-wang/)
+
+> **臺北醫學大學 藥學院 / 跨領域學院**  
+> 智慧醫療跨領域學士學位學程 主任 · 臨床基因體學暨蛋白質體學學程 副教授  
+> 🌐 正式網站：**[https://wang3yuan.github.io/](https://wang3yuan.github.io/)**
 
 ---
 
-## 🌟 網站特色
+## 📖 關於本網站 (About This Website)
 
-1. **零框架、零構建依賴**：完全無需安裝 Node.js、npm 或任何編譯工具，開箱即用。
-2. **中英雙語即時切換**：點擊右上角 `EN / 中文` 按鈕即可無縫切換語言，並自動記憶訪客偏好。
-3. **醫學科技藍 + 活力琥珀金（方案 A）**：展現臺北醫學大學智慧醫療之科技嚴謹性與設計思考活力。
-4. **深色 / 淺色模式（Dark Mode）**：支援一鍵切換深淺模式，並會自動跟隨訪客系統設定。
-5. **全平台響應式（RWD）**：手機、平板、高解析度螢幕皆自動完美排版。
-6. **代表作即時篩選**：可依「智慧醫療與機器學習」、「計算質譜與代謝體學」、「轉譯體學與生物標記」分類過濾文獻。
+本儲存庫為 **王三源 博士 (Dr. San-Yuan Wang)** 的個人官方學術網站原始碼，透過 GitHub Pages 進行自動部署。
 
----
+網站融合資訊科學底蘊、多體學大數據與以人為本的設計思考，全面呈現王老師的學術研究、創新教學理念、學經歷軌跡、代表性著作與實驗室研究生招募資訊。
 
-## 📂 檔案結構
-
-```text
-藥物分析/
-├── index.html       # 網頁主要內容與結構（含中英雙語文本）
-├── style.css        # 現代視覺樣式、色彩主題與 RWD 排版
-├── main.js          # 雙語切換、深淺色切換、篩選邏輯
-├── photo.png        # 個人去背照片（480×480，疊在品牌漸層圓底上）
-└── README.md        # 本說明文件與 GitHub Pages 發佈指引
-```
+### 🌟 網站功能與設計特色
+* **中英雙語架構 (Bilingual Support)**：全站內容支援 Traditional Chinese (`zh-TW`) 與 English (`en`) 即時無縫切換。
+* **深淺色主題 (Dark / Light Theme)**：預設跟隨訪客系統偏好，並支援一鍵手動切換與狀態記憶。
+* **純靜態零依賴 (Pure Vanilla Stack)**：以現代語意化 HTML5、CSS3 與原生 JavaScript 打造，免框架、免建置、載入極速。
+* **全平台響應式 (Responsive Web Design)**：完美適配桌機、平板與智慧型手機螢幕。
+* **社群與搜尋引擎最佳化 (SEO & Open Graph)**：內嵌 schema.org 結構化資料與社群分享預覽卡片。
 
 ---
 
-## 💻 本地預覽方法
+## 🔬 研究專長與核心領域 (Research Focus)
 
-### 方法一：直接點擊開啟
-直接在您的 Mac Finder 中雙擊 `index.html`，即會自動在 Safari 或 Chrome 中開啟預覽。
+王三源老師畢業於國立臺灣大學資訊工程學研究所，研究跨足資訊演算法、質譜大數據與智慧醫療轉譯：
 
-### 方法二：透過輕量本地伺服器（推薦）
-在終端機中進入本專案資料夾並執行：
-```bash
-python3 -m http.server 8000
-```
-接著在瀏覽器打開網址：`http://localhost:8000`
-
----
-
-## 🚀 如何發佈到 GitHub Pages（簡易三步驟）
-
-### 步驟 1：在 GitHub 上建立新儲存庫（Repository）
-1. 登入您的 [GitHub 帳號](https://github.com/)。
-2. 點擊右上角的 `+` 號，選擇 **New repository**。
-3. 設定 Repository 名稱：
-   * **個人主首頁**：命名為 `<您的GitHub帳號名稱>.github.io`（例如 `sywang.github.io`，網址將會是 `https://sywang.github.io/`）。
-   * **一般專案頁面**：命名為任意名稱（例如 `academic-profile`，網址會是 `https://<您的帳號>.github.io/academic-profile/`）。
-4. 選擇 **Public**（公開），其餘選項保持空白，點擊 **Create repository**。
-
-### 步驟 2：將本機檔案推送到 GitHub
-在終端機進入本專案目錄（`/Users/syw/Desktop/藥物分析`），依序執行以下指令：
-
-```bash
-git init
-git add .
-git commit -m "feat: 初版王三源副教授雙語個人學術網站"
-git branch -M main
-git remote add origin https://github.com/<您的GitHub帳號名稱>/<儲存庫名稱>.git
-git push -u origin main
-```
-
-### 步驟 3：開啟 GitHub Pages
-1. 進入該 GitHub 專案頁面，點擊上方的 **Settings**（設定）。
-2. 在左側選單中點擊 **Pages**。
-3. 在 **Build and deployment** > **Branch** 下方：
-   * 將分支選為 `main`
-   * 目錄選為 `/(root)`
-   * 點擊 **Save**。
-4. 等待約 1~2 分鐘，上方即會顯示綠色提示：  
-   `Your site is live at https://<您的網址>`，恭喜網站正式上線！
+1. **計算代謝體學與計算質譜學 (Computational Metabolomics & Mass Spectrometry)**  
+   液相層析串聯質譜（LC-MS/MS）訊號解析、滯留時間（RT）機器學習預測、以及批次效應校正工具研發（如廣獲國際引用的 *Batch Normalizer*）。
+2. **智慧醫療與臨床預後預測 (Intelligent Healthcare & Patient Prognosis Prediction)**  
+   結合進階機器學習與臨床真實世界大數據（EHR），專注於病人疾病預後評估與藥物不良反應（如抗生素誘發之急性腎損傷 AKI）風險預測。
+3. **生物標記物發掘與轉譯體學 (Biomarker Discovery & Translational Omics)**  
+   多體學整合分析（蛋白質體、代謝體、醣基化圖譜），發掘疾病早期生物標記物（如以 IgG 醣基化特徵鑑別自體免疫胰臟炎與胰臟癌）。
+4. **藥物分析與化學指紋圖譜 (Pharmaceutical Analysis & Fingerprinting)**  
+   結合分析化學與資料科學，研發柱後衍生化增敏技術，並以機器學習建立天然產物（如桑葉）特徵指紋圖譜。
 
 ---
 
-## 📷 如何更換個人照片？
+## 💡 創新教學與人才培育 (Innovative Teaching)
 
-首頁名片使用 `photo.png`（正方形、去背 PNG，建議 480×480 以上）。照片透明處會透出品牌藍色漸層圓底。
+* **智慧醫療跨領域學士學位學程 主任**：融合資訊、醫藥與臨床多元領域，規劃跨界智慧醫療人才培育藍圖。
+* **教育部苗圃計畫 授證教練**：汲取設計思考（Design Thinking）核心養分，以同理心體察學生學習痛點，引導跨領域團隊從真實臨床痛點出發共創原型。
+* **教學榮譽肯定**：連續榮獲 113 學年度臺北醫學大學「典範課程獎」及 114 學年度「校級教學優良教師」殊榮。
 
-1. 準備新照片，裁成正方形、頭頂保留一點空間（圓形裁切會切掉四角）。
-2. 以相同檔名 `photo.png` 覆蓋本資料夾中的舊檔即可，不需修改 HTML。
-3. 重新 `git commit` 並 `git push` 即可自動更新！
+---
 
-## 🔗 正式網址
+## 📚 代表性研究成果 (Selected Publications)
 
-本網站預定網址為 **https://wang3yuan.github.io/**（GitHub 帳號 `wang3yuan`，儲存庫需命名為 `wang3yuan.github.io`）。
+1. **Lo, P. Y.**, Chan, F. Y., Ku, Y. E., **Wang, S. Y.**, & Chen, H. Y. (2026). Development and validation of machine learning models to predict vancomycin- and teicoplanin-associated acute kidney injury: A retrospective, multicenter study. *International Journal of Antimicrobial Agents*, 67(1), 107651. [DOI: 10.1016/j.ijantimicag.2025.107651](https://doi.org/10.1016/j.ijantimicag.2025.107651)
+2. Lin, Y. C., Huang, S. W., **Wang, S. Y.**, Su, J. R., Wang, J. J., Hsu, M. J., & Liao, H. W. (2025). A sensitive post-column derivatization approach for enhancing hydroxyl metabolites detection. *Analytica Chimica Acta*, 1337, 343516. [DOI: 10.1016/j.aca.2024.343516](https://doi.org/10.1016/j.aca.2024.343516)
+3. Lin, C. C., **Wang, S. Y.**, Chong, K. Y., Le, V. T. T., Lin, Y. Y., Chen, L. G., Lee, C. J., & Wang, C. C. (2025). Establishing identifiable characteristic fingerprints of mulberry leaves: Integrating chemical composition and bioactivity through machine learning. *Journal of Ethnopharmacology*, 352, 120186. [DOI: 10.1016/j.jep.2025.120186](https://doi.org/10.1016/j.jep.2025.120186)
+4. Shih, H. C., Chang, M. C., Chen, C. H., Tsai, I. L., **Wang, S. Y.**, Kuo, Y. P., & Chang, Y. T. (2019). High accuracy differentiating autoimmune pancreatitis from pancreatic ductal adenocarcinoma by immunoglobulin G glycosylation. *Clinical Proteomics*, 16, 1. [DOI: 10.1186/s12014-018-9221-1](https://doi.org/10.1186/s12014-018-9221-1)
+5. **Wang, S. Y.**, Kuo, C. H., & Tseng, Y. J. (2013). Batch Normalizer: a fast total abundance regression calibration method to simultaneously adjust batch and injection order effects in liquid chromatography/time-of-flight mass spectrometry-based metabolomics data. *Analytical Chemistry*, 85(2), 1037–1046. [DOI: 10.1021/ac302877x](https://doi.org/10.1021/ac302877x)
 
-`index.html` 中的 `og:url`、`og:image`、`canonical` 與結構化資料都已填入此網址。若日後網址變更，請一併修改這幾處，否則貼到 LINE / Facebook 時的預覽卡片會抓不到照片。
+完整著作清單與引用數據請見 [Google Scholar Profile](https://scholar.google.com/citations?user=di44kwgAAAAJ&hl=en)。
+
+---
+
+## 🤝 招募與聯絡資訊 (Join Us & Contact)
+
+實驗室長期歡迎對**機器學習、資料科學、多體學質譜數據分析**有興趣且不害怕寫程式的研究生與專題生加入！
+
+* **Email**：[syw@tmu.edu.tw](mailto:syw@tmu.edu.tw)
+* **電話**：+886-2-2736-1661 ext. 28078 (分機 28078)
+* **研究室位置**：
+  * 臺北醫學大學 藥學暨營養大樓 10F R1016
+  * 臺北醫學大學 杏春樓 B1 智慧醫療辦公室
+* **個人網頁**：[https://wang3yuan.github.io/](https://wang3yuan.github.io/)
+
+---
+
+## 📄 版權與維護 (License & Maintenance)
+
+&copy; 2026 王三源 博士 (Dr. San-Yuan Wang). All Rights Reserved.  
+Hosted on GitHub Pages via repository `wang3yuan/wang3yuan.github.io`.
