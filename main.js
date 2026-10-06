@@ -10,22 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentLangText = document.getElementById('current-lang-text');
   const htmlRoot = document.documentElement;
 
-  // 讀取先前儲存之語言偏好，預設為中文 'zh'
-  const savedLang = localStorage.getItem('wang_academic_lang') || 'zh';
-  setLanguage(savedLang);
+  // <head> 內的小程式已先套用儲存的偏好，這裡同步按鈕文字與分頁標題
+  setLanguage(htmlRoot.getAttribute('data-lang') || 'zh');
 
   if (langToggleBtn) {
     langToggleBtn.addEventListener('click', () => {
       const current = htmlRoot.getAttribute('data-lang') || 'zh';
       const nextLang = current === 'zh' ? 'en' : 'zh';
       setLanguage(nextLang);
+      savePref('wang_academic_lang', nextLang);
     });
   }
 
   function setLanguage(lang) {
     htmlRoot.setAttribute('data-lang', lang);
     htmlRoot.setAttribute('lang', lang === 'zh' ? 'zh-TW' : 'en');
-    localStorage.setItem('wang_academic_lang', lang);
 
     if (currentLangText) {
       // 若當前為中文，按鈕提示切換成 'EN'；若當前為英文，按鈕提示切換成 '中文'
@@ -44,22 +43,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggleBtn = document.getElementById('theme-toggle');
   const themeIcon = document.getElementById('theme-icon');
 
-  // 讀取偏好或系統設定
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const savedTheme = localStorage.getItem('wang_academic_theme') || (systemPrefersDark ? 'dark' : 'light');
-  setTheme(savedTheme);
+  // 只有訪客手動切換時才記住偏好；未切換過則持續跟隨系統設定
+  const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  setTheme(htmlRoot.getAttribute('data-theme') || (darkQuery.matches ? 'dark' : 'light'));
+
+  darkQuery.addEventListener('change', (e) => {
+    if (!readPref('wang_academic_theme')) {
+      setTheme(e.matches ? 'dark' : 'light');
+    }
+  });
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
       const current = htmlRoot.getAttribute('data-theme') || 'light';
       const nextTheme = current === 'light' ? 'dark' : 'light';
       setTheme(nextTheme);
+      savePref('wang_academic_theme', nextTheme);
     });
   }
 
   function setTheme(theme) {
     htmlRoot.setAttribute('data-theme', theme);
-    localStorage.setItem('wang_academic_theme', theme);
 
     if (themeIcon) {
       if (theme === 'dark') {
@@ -79,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileToggleBtn && navLinks) {
     mobileToggleBtn.addEventListener('click', () => {
       navLinks.classList.toggle('open');
+      mobileToggleBtn.setAttribute('aria-expanded', navLinks.classList.contains('open'));
       const icon = mobileToggleBtn.querySelector('i');
       if (icon) {
         if (navLinks.classList.contains('open')) {
@@ -95,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
+        mobileToggleBtn.setAttribute('aria-expanded', 'false');
         const icon = mobileToggleBtn.querySelector('i');
         if (icon) {
           icon.classList.remove('fa-xmark');
@@ -132,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navItems = document.querySelectorAll('.nav-links .nav-link');
 
   function updateActiveNav() {
-    const scrollY = window.pageYOffset;
+    const scrollY = window.scrollY;
 
     sections.forEach(current => {
       const sectionHeight = current.offsetHeight;
@@ -151,7 +157,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  window.addEventListener('scroll', updateActiveNav);
+  // 以 requestAnimationFrame 節流，避免每次捲動事件都重新計算
+  let navTicking = false;
+  window.addEventListener('scroll', () => {
+    if (navTicking) return;
+    navTicking = true;
+    requestAnimationFrame(() => {
+      updateActiveNav();
+      navTicking = false;
+    });
+  }, { passive: true });
 
   // --- 6. 動態年份更新 ---
   const yearElem = document.getElementById('current-year');
@@ -159,6 +174,21 @@ document.addEventListener('DOMContentLoaded', () => {
     yearElem.textContent = new Date().getFullYear();
   }
 });
+
+// localStorage 在部分隱私模式下會拋出錯誤，統一包裝
+function readPref(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch (e) {
+    return null;
+  }
+}
+
+function savePref(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (e) {}
+}
 
 // CSS 動畫關鍵影格注入
 const styleSheet = document.createElement('style');

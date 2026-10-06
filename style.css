@@ -265,6 +265,7 @@ html[data-theme="dark"] .navbar {
   border-radius: 4px;
   background: var(--primary-800);
   color: #ffffff;
+  white-space: nowrap;
 }
 
 html[data-theme="dark"] .lang-badge {
@@ -535,9 +536,21 @@ html[data-theme="dark"] .btn-outline {
 
 .profile-avatar-circle {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 148px;
+  height: 148px;
   margin: 0 auto 20px auto;
+}
+
+/* 去背照片疊在品牌漸層圓底上 */
+.avatar-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  background: linear-gradient(160deg, var(--primary-600), var(--primary-900));
+  box-shadow: 0 8px 24px rgba(15, 59, 104, 0.3);
 }
 
 .avatar-monogram {
@@ -1808,6 +1821,41 @@ html[data-theme="dark"] .pub-doi-link {
   gap: 14px;
 }
 
+/* --- 加入我們 (Join Us) --- */
+.join-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.join-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.join-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.join-list li i {
+  flex-shrink: 0;
+  width: 18px;
+  margin-top: 4px;
+  text-align: center;
+  color: var(--accent-500);
+}
+
+#join .pub-footer-cta {
+  margin-top: 36px;
+}
+
 /* --- 14. 聯絡方式區塊 (Contact) --- */
 .contact-grid {
   display: grid;
@@ -1989,6 +2037,37 @@ html[data-theme="dark"] .matrix-btn i {
 }
 
 /* --- 16. 響應式排版 (Responsive Media Queries) --- */
+/* 導覽列 8 個項目約需 1,050px，低於 1100px 改用漢堡選單 */
+@media (max-width: 1100px) {
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-only {
+    display: inline-flex;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr;
@@ -2017,6 +2096,7 @@ html[data-theme="dark"] .matrix-btn i {
   }
 
   .skills-matrix-grid,
+  .join-grid,
   .about-grid,
   .teaching-grid,
   .timeline-container,
@@ -2035,32 +2115,30 @@ html[data-theme="dark"] .matrix-btn i {
     --nav-height: 64px;
   }
 
-  .nav-links {
-    position: fixed;
-    top: var(--nav-height);
-    left: 0;
-    right: 0;
-    background: var(--bg-card);
-    border-bottom: 1px solid var(--border-color);
-    padding: 20px 24px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-120%);
-    opacity: 0;
-    pointer-events: none;
-    transition: var(--transition);
+  .nav-logo {
+    gap: 10px;
+    min-width: 0;
   }
 
-  .nav-links.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
+  .logo-name {
+    font-size: 15px;
   }
 
-  .mobile-only {
-    display: inline-flex;
+  .nav-actions {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .btn-icon {
+    padding: 0 10px;
+  }
+
+  .logo-sub {
+    display: none;
+  }
+
+  .hero-title .title-comma {
+    display: none;
   }
 
   .hero-title {

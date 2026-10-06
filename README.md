@@ -23,6 +23,7 @@
 ├── index.html       # 網頁主要內容與結構（含中英雙語文本）
 ├── style.css        # 現代視覺樣式、色彩主題與 RWD 排版
 ├── main.js          # 雙語切換、深淺色切換、篩選邏輯
+├── photo.png        # 個人去背照片（480×480，疊在品牌漸層圓底上）
 └── README.md        # 本說明文件與 GitHub Pages 發佈指引
 ```
 
@@ -76,22 +77,14 @@ git push -u origin main
 
 ---
 
-## 📷 未來如何換上個人照片？
+## 📷 如何更換個人照片？
 
-目前首頁個人名片採用優雅的幾何科技標誌（`SYW` 徽章），如果您之後想放上真實的照片：
-1. 將照片命名為 `photo.jpg` 並放入本資料夾中。
-2. 開啟 `index.html`，找到：
-   ```html
-   <div class="profile-avatar-circle">
-     <div class="avatar-monogram">SYW</div>
-     <div class="avatar-ring"></div>
-   </div>
-   ```
-3. 替換為：
-   ```html
-   <div class="profile-avatar-circle">
-     <img src="photo.jpg" alt="王三源 副教授" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
-     <div class="avatar-ring"></div>
-   </div>
-   ```
-4. 重新 `git commit` 並 `git push` 即可自動更新！
+首頁名片使用 `photo.png`（正方形、去背 PNG，建議 480×480 以上）。照片透明處會透出品牌藍色漸層圓底。
+
+1. 準備新照片，裁成正方形、頭頂保留一點空間（圓形裁切會切掉四角）。
+2. 以相同檔名 `photo.png` 覆蓋本資料夾中的舊檔即可，不需修改 HTML。
+3. 重新 `git commit` 並 `git push` 即可自動更新！
+
+## 🔗 上線後別忘了
+
+網站上線取得正式網址後，打開 `index.html`，找到 `og:url` 與 `og:image` 兩行，換成正式網址並取消註解。之後把網址貼到 LINE / Facebook 時，就會顯示含照片的預覽卡片。

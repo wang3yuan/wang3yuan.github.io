@@ -3,18 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>王三源 副教授 | Dr. San-Yuan Wang - 個人學術網頁</title>
+  <title>王三源 副教授 | Dr. San-Yuan Wang - 臺北醫學大學</title>
   <meta name="description" content="王三源副教授 (San-Yuan Wang) 個人學術網站 - 臺北醫學大學跨領域學院智慧醫療跨領域學士學位學程主任、臨床基因體學暨蛋白質體學學程副教授。專長於資訊演算法、生醫數據科學、智慧醫療與臨床AI決策。">
   <meta name="keywords" content="王三源, San-Yuan Wang, 臺北醫學大學, TMU, 計算代謝體學, 計算質譜學, 智慧醫療, 機器學習, 設計思考, 苗圃計畫">
-  
+  <meta name="theme-color" content="#0f3b68">
+
+  <!-- 社群分享預覽 (Open Graph) -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="王三源 副教授 | Dr. San-Yuan Wang - 臺北醫學大學">
+  <meta property="og:description" content="臺北醫學大學 智慧醫療跨領域學士學位學程主任。研究專長：計算代謝體學、計算質譜學、智慧醫療與臨床 AI。">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:locale:alternate" content="en_US">
+  <!-- 網站上線後，請將下方兩行的網址改為正式網址並取消註解（og:image 必須是完整網址）
+  <meta property="og:url" content="https://<您的帳號>.github.io/">
+  <meta property="og:image" content="https://<您的帳號>.github.io/photo.png">
+  -->
+  <meta name="twitter:card" content="summary">
+
+  <!-- 結構化資料 (schema.org)，協助 Google 辨識個人學術檔案 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "San-Yuan Wang",
+    "alternateName": "王三源",
+    "honorificPrefix": "Dr.",
+    "jobTitle": "Associate Professor",
+    "email": "mailto:syw@tmu.edu.tw",
+    "image": "photo.png",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Taipei Medical University",
+      "alternateName": "臺北醫學大學"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "National Taiwan University"
+    },
+    "knowsAbout": ["Computational Metabolomics", "Computational Mass Spectrometry", "Machine Learning", "Intelligent Healthcare", "Biomarker Discovery", "Design Thinking"],
+    "sameAs": [
+      "https://orcid.org/0000-0002-8804-2226",
+      "https://scholar.google.com/citations?user=di44kwgAAAAJ",
+      "https://hub.tmu.edu.tw/zh/persons/san-yuan-wang/",
+      "https://www.researchgate.net/profile/San-Yuan_Wang"
+    ]
+  }
+  </script>
+
+  <!-- 在畫面繪製前套用語言與深淺色偏好，避免載入時閃爍 -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var lang = localStorage.getItem('wang_academic_lang');
+        if (lang === 'en' || lang === 'zh') {
+          root.setAttribute('data-lang', lang);
+          root.setAttribute('lang', lang === 'zh' ? 'zh-TW' : 'en');
+        }
+        var theme = localStorage.getItem('wang_academic_theme');
+        if (theme !== 'dark' && theme !== 'light') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        root.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Favicon (SVG) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f3b68'/><text x='50' y='65' font-size='48' font-family='sans-serif' font-weight='bold' fill='%23f59e0b' text-anchor='middle'>W</text></svg>">
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- 只載入實際用到的 Solid 與 Brands 圖示，比 all.min.css 更輕量 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css">
   
   <link rel="stylesheet" href="style.css">
 </head>
@@ -56,6 +121,10 @@
           <span class="lang-zh">精選著作</span>
           <span class="lang-en">Publications</span>
         </a>
+        <a href="#join" class="nav-link">
+          <span class="lang-zh">加入我們</span>
+          <span class="lang-en">Join Us</span>
+        </a>
         <a href="#contact" class="nav-link">
           <span class="lang-zh">聯絡方式</span>
           <span class="lang-en">Contact</span>
@@ -70,12 +139,12 @@
         </button>
 
         <!-- 深淺色模式切換 -->
-        <button id="theme-toggle" class="btn-icon" aria-label="切換外觀模式 / Toggle Theme" title="深色/淺色切換">
+        <button id="theme-toggle" class="btn-icon" aria-label="切換深淺色 / Toggle Theme" title="切換深淺色 / Toggle Theme">
           <i class="fa-solid fa-moon" id="theme-icon"></i>
         </button>
 
         <!-- 手機漢堡選單 -->
-        <button id="mobile-toggle" class="btn-icon mobile-only" aria-label="開啟選單">
+        <button id="mobile-toggle" class="btn-icon mobile-only" aria-label="選單 / Menu" aria-controls="nav-links" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -96,12 +165,12 @@
           <div class="hero-badge">
             <span class="badge-dot"></span>
             <span class="lang-zh">臺北醫學大學 · 跨領域學院 / 藥學院</span>
-            <span class="lang-en">Taipei Medical University · Interdisciplinary College</span>
+            <span class="lang-en">Taipei Medical University · College of Interdisciplinary Studies / College of Pharmacy</span>
           </div>
 
           <h1 class="hero-title">
             <span class="lang-zh">王三源 <span class="title-sub">博士 / 副教授</span></span>
-            <span class="lang-en">San-Yuan Wang, <span class="title-sub">Ph.D.</span></span>
+            <span class="lang-en">San-Yuan Wang<span class="title-comma">,</span> <span class="title-sub">Ph.D.</span></span>
           </h1>
 
           <div class="hero-roles">
@@ -169,7 +238,7 @@
         <div class="hero-avatar-wrapper">
           <div class="profile-card">
             <div class="profile-avatar-circle">
-              <div class="avatar-monogram">SYW</div>
+              <img class="avatar-photo" src="photo.png" width="480" height="480" alt="王三源 副教授 Dr. San-Yuan Wang">
               <div class="avatar-ring"></div>
             </div>
             <h3 class="profile-card-name">
@@ -196,7 +265,7 @@
               </div>
               <div class="metric-divider"></div>
               <div class="metric-item">
-                <span class="metric-val">19</span>
+                <span class="metric-val">21</span>
                 <span class="metric-lbl">h-index</span>
               </div>
             </div>
@@ -223,7 +292,8 @@
         <div class="stat-card">
           <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
           <div class="stat-info">
-            <h4>114 / 113 學年度</h4>
+            <h4 class="lang-zh">114 / 113 學年度</h4>
+            <h4 class="lang-en">AY 2025–26 / 2024–25</h4>
             <p class="lang-zh">校級教學優良教師 · 典範課程獎</p>
             <p class="lang-en">TMU Excellent Teaching &amp; Course Awards</p>
           </div>
@@ -239,7 +309,8 @@
         <div class="stat-card">
           <div class="stat-icon"><i class="fa-solid fa-medal"></i></div>
           <div class="stat-info">
-            <h4>國科會 104 年度</h4>
+            <h4 class="lang-zh">國科會 104 年度</h4>
+            <h4 class="lang-en">NSTC 2015</h4>
             <p class="lang-zh">博士後研究人員學術研究獎</p>
             <p class="lang-en">NSTC Postdoc Research Award</p>
           </div>
@@ -247,7 +318,8 @@
         <div class="stat-card">
           <div class="stat-icon"><i class="fa-solid fa-users-gear"></i></div>
           <div class="stat-info">
-            <h4>教育部苗圃計畫</h4>
+            <h4 class="lang-zh">教育部苗圃計畫</h4>
+            <h4 class="lang-en">MOE Nursery Project</h4>
             <p class="lang-zh">跨領域設計思考「授證教練」</p>
             <p class="lang-en">Certified Design Thinking Coach</p>
           </div>
@@ -289,7 +361,7 @@
                 Upon joining Taipei Medical University, he bridged computer science with clinical pharmacology and medicine, specializing in <strong>Computational Metabolomics</strong>, <strong>Computational Mass Spectrometry</strong>, and <strong>Biomedical Data Science</strong>. He developed internationally adopted methods such as <em>Batch normalizer</em> to adjust for batch and injection order effects in LC-MS, widely applied in metabolomics and translational medicine research. His groundbreaking contributions were internationally and nationally recognized with the inaugural <strong>Metabolomics Society 2015 Early Career Award</strong> and the <strong>NSTC Postdoctoral Academic Research Award</strong>.
               </p>
               <p>
-                In pedagogical innovation, Dr. Wang believes that empathy is foundational to empowering future talents. As a <strong>certified coach of the MOE Design Thinking Nursery Project</strong>, he draws on the principles of <strong>Design Thinking</strong> to empathize with students' learning curves and design learner-centric curricula, bridging biomedical science and computational technology. His dedicated teaching excellence was celebrated consecutively with the <strong>TMU Exemplary Course Award (AY113)</strong> and the <strong>TMU University-Level Excellent Teaching Award (AY114)</strong>.
+                In pedagogical innovation, Dr. Wang believes that empathy is foundational to empowering future talents. As a <strong>certified coach of the MOE Design Thinking Nursery Project</strong>, he draws on the principles of <strong>Design Thinking</strong> to empathize with students' learning curves and design learner-centric curricula, bridging biomedical science and computational technology. His dedicated teaching excellence was celebrated consecutively with the <strong>TMU Exemplary Course Award (AY2024–25)</strong> and the <strong>TMU University-Level Excellent Teaching Award (AY2025–26)</strong>.
               </p>
             </div>
 
@@ -426,10 +498,10 @@
               </li>
             </ul>
             <div class="skill-matrix-pills">
-              <span>演算法</span>
-              <span>資料科學</span>
+              <span class="lang-zh">演算法</span><span class="lang-en">Algorithms</span>
+              <span class="lang-zh">資料科學</span><span class="lang-en">Data Science</span>
               <span>Biomarker Discovery</span>
-              <span>病人預後預測</span>
+              <span class="lang-zh">病人預後預測</span><span class="lang-en">Prognosis Prediction</span>
               <span>Machine Learning</span>
             </div>
           </div>
@@ -478,12 +550,12 @@
               </li>
             </ul>
             <div class="skill-matrix-pills">
-              <span>計算質譜學</span>
-              <span>代謝體學</span>
-              <span>多體學大數據</span>
+              <span class="lang-zh">計算質譜學</span><span class="lang-en">Computational MS</span>
+              <span class="lang-zh">代謝體學</span><span class="lang-en">Metabolomics</span>
+              <span class="lang-zh">多體學大數據</span><span class="lang-en">Multi-Omics</span>
               <span>LC-MS/MS</span>
               <span>Batch Normalizer</span>
-              <span>RT 預測</span>
+              <span class="lang-zh">RT 預測</span><span class="lang-en">RT Prediction</span>
             </div>
           </div>
 
@@ -531,11 +603,11 @@
               </li>
             </ul>
             <div class="skill-matrix-pills">
-              <span>設計思考</span>
-              <span>智慧醫療學程</span>
-              <span>跨領域教學</span>
-              <span>苗圃授證教練</span>
-              <span>PBL 實作</span>
+              <span class="lang-zh">設計思考</span><span class="lang-en">Design Thinking</span>
+              <span class="lang-zh">智慧醫療學程</span><span class="lang-en">Intelligent Healthcare</span>
+              <span class="lang-zh">跨領域教學</span><span class="lang-en">Interdisciplinary Teaching</span>
+              <span class="lang-zh">苗圃授證教練</span><span class="lang-en">Certified Coach</span>
+              <span class="lang-zh">PBL 實作</span><span class="lang-en">PBL</span>
             </div>
           </div>
         </div>
@@ -720,7 +792,7 @@
                 <span class="award-tag lang-zh" style="color: #fde68a;">校級教學殊榮</span>
                 <span class="award-tag lang-en" style="color: #fde68a;">University-Level Honor</span>
                 <h4 class="lang-zh">114 學年度 臺北醫學大學「校級教學優良教師」</h4>
-                <h4 class="lang-en">TMU University-Level Excellent Teaching Award (AY114)</h4>
+                <h4 class="lang-en">TMU University-Level Excellent Teaching Award (AY2025–26)</h4>
                 <p class="lang-zh">
                   獲選全校性教學優良肯定，表彰其在跨領域引導、啟發式教學與培育新世代生醫智慧人才之卓越付出。
                 </p>
@@ -736,7 +808,7 @@
                 <span class="award-tag lang-zh">課程架構革新</span>
                 <span class="award-tag lang-en">Curriculum Innovation</span>
                 <h4 class="lang-zh">113 學年度 臺北醫學大學「典範課程獎」</h4>
-                <h4 class="lang-en">TMU Exemplary Course Award (AY113)</h4>
+                <h4 class="lang-en">TMU Exemplary Course Award (AY2024–25)</h4>
                 <p class="lang-zh">
                   肯定在課程架構革新、以學生為中心的互動式引導，以及跨領域智慧醫療專案實踐上的卓越教學成果。
                 </p>
@@ -774,22 +846,22 @@
                 <li>
                   <span class="course-name lang-zh">智慧醫療跨領域實作專案</span>
                   <span class="course-name lang-en">Intelligent Healthcare Interdisciplinary Projects</span>
-                  <span class="course-badge">跨領域學程</span>
+                  <span class="course-badge"><span class="lang-zh">跨領域學程</span><span class="lang-en">Undergraduate</span></span>
                 </li>
                 <li>
                   <span class="course-name lang-zh">生物資訊學與數據分析</span>
                   <span class="course-name lang-en">Bioinformatics and Data Analysis</span>
-                  <span class="course-badge">研究所</span>
+                  <span class="course-badge"><span class="lang-zh">研究所</span><span class="lang-en">Graduate</span></span>
                 </li>
                 <li>
                   <span class="course-name lang-zh">臨床代謝體學與質譜數據解析</span>
                   <span class="course-name lang-en">Clinical Metabolomics &amp; MS Data Deconvolution</span>
-                  <span class="course-badge">研究所</span>
+                  <span class="course-badge"><span class="lang-zh">研究所</span><span class="lang-en">Graduate</span></span>
                 </li>
                 <li>
                   <span class="course-name lang-zh">設計思考與生醫創新工作坊</span>
                   <span class="course-name lang-en">Design Thinking &amp; Biomedical Innovation Workshop</span>
-                  <span class="course-badge">苗圃計畫</span>
+                  <span class="course-badge"><span class="lang-zh">苗圃計畫</span><span class="lang-en">MOE Nursery</span></span>
                 </li>
               </ul>
             </div>
@@ -823,7 +895,7 @@
             <div class="timeline">
               <div class="timeline-item">
                 <div class="timeline-dot current"></div>
-                <div class="timeline-time">2025 - 至今</div>
+                <div class="timeline-time"><span class="lang-zh">2025 - 至今</span><span class="lang-en">2025 - Present</span></div>
                 <div class="timeline-body">
                   <h4 class="timeline-role lang-zh">學程主任</h4>
                   <h4 class="timeline-role lang-en">Program Director</h4>
@@ -834,7 +906,7 @@
 
               <div class="timeline-item">
                 <div class="timeline-dot current"></div>
-                <div class="timeline-time">2023 - 至今</div>
+                <div class="timeline-time"><span class="lang-zh">2023 - 至今</span><span class="lang-en">2023 - Present</span></div>
                 <div class="timeline-body">
                   <h4 class="timeline-role lang-zh">副教授</h4>
                   <h4 class="timeline-role lang-en">Associate Professor</h4>
@@ -856,7 +928,7 @@
 
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-time">2019 - 至今</div>
+                <div class="timeline-time"><span class="lang-zh">2019 - 至今</span><span class="lang-en">2019 - Present</span></div>
                 <div class="timeline-body">
                   <h4 class="timeline-role lang-zh">合聘副教授 / 助理教授</h4>
                   <h4 class="timeline-role lang-en">Joint Associate / Assistant Professor</h4>
@@ -890,7 +962,7 @@
               <!-- 2014 最高學歷 (Highest Degree) -->
               <div class="timeline-item timeline-degree-item">
                 <div class="timeline-dot degree-dot"><i class="fa-solid fa-graduation-cap"></i></div>
-                <div class="timeline-time">2014 · 最高學歷</div>
+                <div class="timeline-time"><span class="lang-zh">2014 · 最高學歷</span><span class="lang-en">2014 · Highest Degree</span></div>
                 <div class="timeline-body">
                   <h4 class="timeline-role lang-zh">資訊工程學 博士 (Ph.D.)</h4>
                   <h4 class="timeline-role lang-en">Ph.D. in Computer Science &amp; Information Engineering</h4>
@@ -917,7 +989,7 @@
                     <div class="award-item-header">
                       <span class="award-item-title lang-zh">國際代謝體學學會 青年學者獎 (第一屆)</span>
                       <span class="award-item-title lang-en">Metabolomics Society Early Career Award (Inaugural)</span>
-                      <span class="award-tag-pill intl">國際殊榮 · 2015</span>
+                      <span class="award-tag-pill intl"><span class="lang-zh">國際殊榮 · 2015</span><span class="lang-en">International · 2015</span></span>
                     </div>
                     <p class="award-item-desc lang-zh">
                       Metabolomics Society 第一屆早期職業學者得獎者，肯定在計算代謝體學與質譜演算法之開創性貢獻。
@@ -940,7 +1012,7 @@
                     <div class="award-item-header">
                       <span class="award-item-title lang-zh">國科會 博士後研究人員學術研究獎</span>
                       <span class="award-item-title lang-en">NSTC Postdoctoral Academic Research Award</span>
-                      <span class="award-tag-pill national">國家級獎項 · 104年度</span>
+                      <span class="award-tag-pill national"><span class="lang-zh">國家級獎項 · 104年度</span><span class="lang-en">National · 2015</span></span>
                     </div>
                     <p class="award-item-desc lang-zh">
                       國家科學及技術委員會（時為科技部）104 年度博士後研究人員學術研究獎，表彰博士後階段卓越研究產出。
@@ -958,7 +1030,7 @@
                     <div class="award-item-header">
                       <span class="award-item-title lang-zh">臺北醫學大學「校級教學優良教師」</span>
                       <span class="award-item-title lang-en">TMU University-Level Excellent Teaching Award</span>
-                      <span class="award-tag-pill">校級殊榮 · 114學年度</span>
+                      <span class="award-tag-pill"><span class="lang-zh">校級殊榮 · 114學年度</span><span class="lang-en">University · AY2025–26</span></span>
                     </div>
                     <p class="award-item-desc lang-zh">
                       獲選全校性教學優良肯定，表彰在跨領域引導、啟發式教學與培育生醫智慧人才之卓越表現。
@@ -976,31 +1048,13 @@
                     <div class="award-item-header">
                       <span class="award-item-title lang-zh">臺北醫學大學「典範課程獎」</span>
                       <span class="award-item-title lang-en">TMU Exemplary Course Award</span>
-                      <span class="award-tag-pill">校級殊榮 · 113學年度</span>
+                      <span class="award-tag-pill"><span class="lang-zh">校級殊榮 · 113學年度</span><span class="lang-en">University · AY2024–25</span></span>
                     </div>
                     <p class="award-item-desc lang-zh">
                       肯定在跨領域智慧醫療專案實踐與以學生為中心之卓越教學成效。
                     </p>
                     <p class="award-item-desc lang-en">
                       Recognizing teaching excellence in student-centric interdisciplinary intelligent healthcare curriculum.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Award 4: 教育部苗圃計畫授證教練 -->
-                <div class="award-item">
-                  <div class="award-badge-icon"><i class="fa-solid fa-lightbulb"></i></div>
-                  <div class="award-item-content">
-                    <div class="award-item-header">
-                      <span class="award-item-title lang-zh">教育部苗圃計畫「設計思考授證教練」</span>
-                      <span class="award-item-title lang-en">MOE Certified Design Thinking Coach</span>
-                      <span class="award-tag-pill">教育部培育 · 授證教練</span>
-                    </div>
-                    <p class="award-item-desc lang-zh">
-                      跨領域教師發展暨量能培力計畫授證，善用設計思考養分同理學生需求並精準規劃課程。
-                    </p>
-                    <p class="award-item-desc lang-en">
-                      Certified coach of MOE Nursery Project, drawing upon design thinking insights to understand student needs and tailor curriculum design.
                     </p>
                   </div>
                 </div>
@@ -1074,6 +1128,33 @@
           </article>
 
           <!-- Paper 2 -->
+          <article class="pub-card" data-category="ai">
+            <div class="pub-badge-year">2025</div>
+            <div class="pub-main">
+              <div class="pub-tags">
+                <span class="tag-cat ai">AI &amp; Natural Products</span>
+                <span class="tag-peer">Peer-Reviewed</span>
+              </div>
+              <h3 class="pub-title">
+                Establishing identifiable characteristic fingerprints of mulberry leaves: Integrating chemical composition and bioactivity through machine learning
+              </h3>
+              <p class="pub-authors">
+                Lin, C. C., <strong>Wang, S. Y.</strong>, Chong, K. Y., Le, V. T. T., Lin, Y. Y., Chen, L. G., Lee, C. J., &amp; Wang, C. C.
+              </p>
+              <p class="pub-journal">
+                <em>Journal of Ethnopharmacology</em>, 352, 120186 (2025)
+              </p>
+              <div class="pub-links">
+                <span class="pub-highlight-tag lang-zh">天然藥物特徵指紋圖譜 · 機器學習整合化學組成與活性</span>
+                <span class="pub-highlight-tag lang-en">Machine Learning &bull; Mulberry Fingerprints</span>
+                <a href="https://doi.org/10.1016/j.jep.2025.120186" target="_blank" rel="noopener noreferrer" class="pub-doi-link">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Paper 3 -->
           <article class="pub-card" data-category="ms">
             <div class="pub-badge-year">2025</div>
             <div class="pub-main">
@@ -1100,7 +1181,7 @@
             </div>
           </article>
 
-          <!-- Paper 3 -->
+          <!-- Paper 4 -->
           <article class="pub-card" data-category="omics">
             <div class="pub-badge-year">2019</div>
             <div class="pub-main">
@@ -1127,7 +1208,7 @@
             </div>
           </article>
 
-          <!-- Paper 4 -->
+          <!-- Paper 5 -->
           <article class="pub-card" data-category="ms">
             <div class="pub-badge-year">2013</div>
             <div class="pub-main">
@@ -1153,33 +1234,6 @@
               </div>
             </div>
           </article>
-
-          <!-- Paper 5 -->
-          <article class="pub-card" data-category="ai">
-            <div class="pub-badge-year">2025</div>
-            <div class="pub-main">
-              <div class="pub-tags">
-                <span class="tag-cat ai">AI &amp; Natural Products</span>
-                <span class="tag-peer">Peer-Reviewed</span>
-              </div>
-              <h3 class="pub-title">
-                Establishing identifiable characteristic fingerprints of mulberry leaves: Integrating chemical composition and bioactivity through machine learning
-              </h3>
-              <p class="pub-authors">
-                Lin, C. C., <strong>Wang, S. Y.</strong>, Chong, K. Y., Le, V. T. T., Lin, Y. Y., Chen, L. G., Lee, C. J., &amp; Wang, C. C.
-              </p>
-              <p class="pub-journal">
-                <em>Journal of Ethnopharmacology</em>, 352, 120186 (2025)
-              </p>
-              <div class="pub-links">
-                <span class="pub-highlight-tag lang-zh">天然藥物特徵指紋圖譜 · 機器學習整合化學組成與活性</span>
-                <span class="pub-highlight-tag lang-en">Machine Learning &bull; Mulberry Fingerprints</span>
-                <a href="https://doi.org/10.1016/j.jep.2025.120186" target="_blank" rel="noopener noreferrer" class="pub-doi-link">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
-                </a>
-              </div>
-            </div>
-          </article>
         </div>
 
         <div class="pub-footer-cta">
@@ -1195,8 +1249,127 @@
       </div>
     </section>
 
+    <!-- 加入我們 (Join Us / Student Recruitment) -->
+    <section class="section" id="join">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag lang-zh">招募夥伴</span>
+          <span class="section-tag lang-en">Join the Lab</span>
+          <h2 class="section-title">
+            <span class="lang-zh">加入我們</span>
+            <span class="lang-en">Prospective Students</span>
+          </h2>
+          <div class="section-bar"></div>
+          <p class="section-subtitle lang-zh">
+            一起用數據與演算法，回答真實的生醫與臨床問題。
+          </p>
+          <p class="section-subtitle lang-en">
+            Use data and algorithms to answer real biomedical and clinical questions with us.
+          </p>
+        </div>
+
+        <div class="join-grid">
+          <div class="research-card">
+            <div class="card-icon-box">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <h3 class="card-title">
+              <span class="lang-zh">歡迎這樣的你</span>
+              <span class="lang-en">Who We Are Looking For</span>
+            </h3>
+            <p class="card-desc lang-zh">
+              對<strong>機器學習</strong>、<strong>數據分析</strong>有興趣，而且<strong>不害怕寫程式</strong>的同學，都非常歡迎加入！不需要一開始就是程式高手，寫程式的能力可以在這裡慢慢培養。
+            </p>
+            <p class="card-desc lang-en">
+              If you are curious about <strong>machine learning</strong> and <strong>data analysis</strong> and <strong>not afraid of coding</strong>, you are warmly welcome! You don't need to be an expert programmer to start &mdash; your coding skills will grow along the way.
+            </p>
+            <div class="card-tags">
+              <span>Machine Learning</span>
+              <span>Data Analysis</span>
+            </div>
+          </div>
+
+          <div class="research-card">
+            <div class="card-icon-box">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <h3 class="card-title">
+              <span class="lang-zh">研究題目方向</span>
+              <span class="lang-en">Research Topics</span>
+            </h3>
+            <ul class="join-list">
+              <li>
+                <i class="fa-solid fa-wave-square"></i>
+                <span class="lang-zh">質譜數據演算法</span>
+                <span class="lang-en">Mass spectrometry data algorithms</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-laptop-medical"></i>
+                <span class="lang-zh">臨床 AI 預測模型</span>
+                <span class="lang-en">Clinical AI prediction models</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-dna"></i>
+                <span class="lang-zh">多體學數據整合</span>
+                <span class="lang-en">Multi-omics data integration</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chart-line"></i>
+                <span class="lang-zh">其他有趣的資料科學題目，也歡迎一起討論</span>
+                <span class="lang-en">Any other data science topic you find exciting</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="research-card">
+            <div class="card-icon-box">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h3 class="card-title">
+              <span class="lang-zh">你將收穫</span>
+              <span class="lang-en">What You Will Gain</span>
+            </h3>
+            <ul class="join-list">
+              <li>
+                <i class="fa-solid fa-code"></i>
+                <span class="lang-zh">程式設計與機器學習實作經驗</span>
+                <span class="lang-en">Hands-on programming and machine learning experience</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-hospital"></i>
+                <span class="lang-zh">與醫院合作，接觸真實臨床資料</span>
+                <span class="lang-en">Work with real clinical data through hospital collaborations</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-file-lines"></i>
+                <span class="lang-zh">參與研究並發表學術論文的機會</span>
+                <span class="lang-en">Opportunities to publish peer-reviewed papers</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pub-footer-cta">
+          <p class="lang-zh">有興趣嗎？歡迎直接聯繫，約個時間到辦公室聊聊！</p>
+          <p class="lang-en">Interested? Get in touch and drop by my office for a chat.</p>
+          <div class="cta-btns">
+            <a href="mailto:syw@tmu.edu.tw?subject=%E5%8A%A0%E5%85%A5%E7%A0%94%E7%A9%B6%E5%AE%A4%E6%B4%BD%E8%A9%A2%20%2F%20Prospective%20Student%20Inquiry" class="btn btn-primary">
+              <i class="fa-solid fa-envelope"></i>
+              <span class="lang-zh">來信約時間</span>
+              <span class="lang-en">Email to Schedule</span>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fa-solid fa-location-dot"></i>
+              <span class="lang-zh">辦公室位置</span>
+              <span class="lang-en">Office Location</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 聯絡方式 (Contact Section) -->
-    <section class="section" id="contact">
+    <section class="section bg-alt" id="contact">
       <div class="container">
         <div class="section-header">
           <span class="section-tag lang-zh">聯繫方式</span>
@@ -1324,14 +1497,6 @@
                   <span class="lang-en">Early Career Award</span>
                 </div>
               </a>
-
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="matrix-btn">
-                <i class="fa-brands fa-github"></i>
-                <div class="matrix-text">
-                  <strong>GitHub Profile</strong>
-                  <span>Open Source Codes</span>
-                </div>
-              </a>
             </div>
           </div>
         </div>
@@ -1344,10 +1509,11 @@
     <div class="container footer-content">
       <div class="footer-left">
         <p>&copy; <span id="current-year">2026</span> 王三源 博士 (Dr. San-Yuan Wang). All Rights Reserved.</p>
-        <p class="footer-sub">臺北醫學大學 跨領域學院 / 藥學院 · 專為 GitHub Pages 打造之純靜態網站</p>
+        <p class="footer-sub lang-zh">臺北醫學大學 跨領域學院 / 藥學院</p>
+        <p class="footer-sub lang-en">College of Interdisciplinary Studies / College of Pharmacy, Taipei Medical University</p>
       </div>
       <div class="footer-right">
-        <a href="#hero" class="back-to-top" title="回到頂部">
+        <a href="#hero" class="back-to-top" title="回到頂部 / Back to top" aria-label="回到頂部 / Back to top">
           <i class="fa-solid fa-arrow-up"></i>
         </a>
       </div>
