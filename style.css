@@ -1146,10 +1146,19 @@ html[data-theme="dark"] .card-icon-box {
 }
 
 /* --- 11. 創新教學與設計思考 (Teaching Grid) --- */
+/* 第一層：教學獎項並排（日後解除註解第三個獎項時會自動排成三欄） */
+.teaching-awards-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+/* 第二層：教學理念｜課程，兩欄等寬 */
 .teaching-grid {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: 36px;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
 }
 
 .teaching-card-highlight {
@@ -1219,12 +1228,6 @@ html[data-theme="dark"] .card-icon-box {
   font-size: 13.5px;
   color: var(--text-muted);
   line-height: 1.5;
-}
-
-.teaching-awards-box {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
 }
 
 .award-card {
@@ -1354,6 +1357,11 @@ html[data-theme="dark"] .course-badge {
 }
 
 /* --- 12. 學經歷時間軸 (Timeline) --- */
+/* 右欄「學歷」卡片與下方「榮譽」標題之間的間距 */
+.education-list {
+  margin-bottom: 36px;
+}
+
 .timeline-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1471,40 +1479,6 @@ html[data-theme="dark"] .course-badge {
   font-size: 13px;
   color: var(--text-secondary);
   line-height: 1.5;
-}
-
-.timeline-dot.degree-dot {
-  width: 22px;
-  height: 22px;
-  left: -31px;
-  top: 2px;
-  background: var(--primary-800);
-  border: 2px solid var(--accent-400);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
-}
-
-html[data-theme="dark"] .timeline-dot.degree-dot {
-  background: var(--primary-700);
-  border-color: var(--accent-400);
-  color: #ffffff;
-}
-
-.timeline-degree-item {
-  background: rgba(15, 59, 104, 0.03);
-  border: 1px dashed var(--primary-300);
-  border-radius: var(--radius-md);
-  padding: 14px 16px;
-  margin-left: -6px;
-}
-
-html[data-theme="dark"] .timeline-degree-item {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(245, 158, 11, 0.3);
 }
 
 /* --- 12.1 學術榮譽與獎項清單 (Awards Section) --- */
