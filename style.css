@@ -1279,118 +1279,78 @@ html[data-theme="dark"] .card-icon-box {
 .courses-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 24px 26px;
+  border-radius: 20px;
+  padding: 28px 30px;
   box-shadow: var(--shadow-sm);
 }
 
 .courses-title {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 16px;
+  gap: 10px;
+  font-size: 17px;
   font-weight: 800;
   color: var(--text-primary);
-  margin-bottom: 18px;
-  padding-bottom: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--border-color);
 }
 
-.courses-categories {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.course-category-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.course-category-header {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 700;
+.courses-title i {
   color: var(--primary-700);
-  background: var(--primary-50);
-  padding: 3px 10px;
-  border-radius: var(--radius-sm);
-  width: fit-content;
-  border: 1px solid rgba(15, 59, 104, 0.12);
-  letter-spacing: 0.3px;
 }
 
-html[data-theme="dark"] .course-category-header {
+html[data-theme="dark"] .courses-title i {
   color: var(--accent-300);
-  background: rgba(245, 158, 11, 0.1);
-  border-color: rgba(245, 158, 11, 0.22);
-}
-
-.courses-sublist {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  padding-left: 6px;
-}
-
-.courses-sublist li {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.courses-sublist li::before {
-  content: "•";
-  color: var(--accent-500);
-  font-size: 15px;
-  line-height: 1;
-}
-
-.courses-sublist .course-name {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  line-height: 1.45;
-}
-
-.course-note {
-  font-size: 12.5px;
-  color: var(--text-muted);
-  line-height: 1.6;
-  padding-left: 6px;
 }
 
 .courses-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .courses-list li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 16px;
+}
+
+.course-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
 }
 
 .course-badge {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 4px;
-  background: var(--bg-alt);
-  color: var(--primary-700);
-  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #f0f6ff;
+  color: #1e40af;
+  border: 1px solid #dbeafe;
   white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.2px;
 }
 
 html[data-theme="dark"] .course-badge {
-  color: var(--accent-300);
+  background: rgba(56, 189, 248, 0.12);
+  color: #7dd3fc;
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+.course-note {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-color);
 }
 
 /* --- 12. 學經歷時間軸 (Timeline) --- */
