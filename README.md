@@ -85,6 +85,8 @@ git push -u origin main
 2. 以相同檔名 `photo.png` 覆蓋本資料夾中的舊檔即可，不需修改 HTML。
 3. 重新 `git commit` 並 `git push` 即可自動更新！
 
-## 🔗 上線後別忘了
+## 🔗 正式網址
 
-網站上線取得正式網址後，打開 `index.html`，找到 `og:url` 與 `og:image` 兩行，換成正式網址並取消註解。之後把網址貼到 LINE / Facebook 時，就會顯示含照片的預覽卡片。
+本網站預定網址為 **https://wang3yuan.github.io/**（GitHub 帳號 `wang3yuan`，儲存庫需命名為 `wang3yuan.github.io`）。
+
+`index.html` 中的 `og:url`、`og:image`、`canonical` 與結構化資料都已填入此網址。若日後網址變更，請一併修改這幾處，否則貼到 LINE / Facebook 時的預覽卡片會抓不到照片。
